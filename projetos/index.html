@@ -518,7 +518,7 @@
   <a href="#jogo-da-memoria" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Jogo da memoria
+        Jogo da memória
       
     </span>
   </a>
@@ -716,7 +716,7 @@
   <a href="#jogo-da-memoria" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Jogo da memoria
+        Jogo da memória
       
     </span>
   </a>
@@ -760,28 +760,28 @@
 
 
 <h1 id="projetos">Projetos<a class="headerlink" href="#projetos" title="Permanent link">&para;</a></h1>
-<p>Duas colecoes diferentes: os projetos que os alunos da disciplina de Sistemas Embarcados
-ja construiram, e os projetos de mostra que montamos para esta oficina.</p>
+<p>Duas coleções diferentes: os projetos de mostra que montamos para esta oficina, e os
+trabalhos que os alunos da disciplina de Sistemas Embarcados já construíram.</p>
 <h2 id="projetos-de-mostra-da-oficina">Projetos de mostra da oficina<a class="headerlink" href="#projetos-de-mostra-da-oficina" title="Permanent link">&para;</a></h2>
-<p>Montados pela equipe para a SEMUNI 2026. Clique para ver o codigo e baixar.</p>
+<p>Montados pela equipe para a SEMUNI 2026. Clique para ver o código e baixar.</p>
 <div class="cartoes" markdown="0">
-<a class="cartao" href="#carrinho-dirigido-pelo-navegador"><img src="assets/carrinho.jpg" alt="Carrinho" style="width:100%;height:110px;object-fit:cover;border-radius:10px;margin-bottom:.7rem"><div class="titulo">Carrinho Wi-Fi</div><div class="resumo">Cria a propria rede e e dirigido pelo navegador.</div></a>
-<a class="cartao" href="#casa-com-telhado-que-fecha-na-chuva"><img src="assets/casa-chuva.jpg" alt="Casa" style="width:100%;height:110px;object-fit:cover;border-radius:10px;margin-bottom:.7rem"><div class="titulo">Casa na chuva</div><div class="resumo">Sensor de chuva fecha o telhado sozinho.</div></a>
-<a class="cartao" href="#radar-de-varredura"><img src="assets/radar.jpg" alt="Radar" style="width:100%;height:110px;object-fit:cover;border-radius:10px;margin-bottom:.7rem"><div class="titulo">Radar</div><div class="resumo">Servo varre um sensor de distancia e apita.</div></a>
-<a class="cartao" href="#jogo-da-memoria"><img src="assets/jogo-da-memoria.jpg" alt="Jogo da memoria" style="width:100%;height:110px;object-fit:cover;border-radius:10px;margin-bottom:.7rem"><div class="titulo">Jogo da memoria</div><div class="resumo">Estilo Genius, com placar e display OLED.</div></a>
-<a class="cartao" href="#cyberdeck"><img src="assets/cyberdeck.jpg" alt="Cyberdeck" style="width:100%;height:110px;object-fit:cover;border-radius:10px;margin-bottom:.7rem"><div class="titulo">Cyberdeck</div><div class="resumo">Raspberry Pi com display numa caixa de madeira.</div></a>
+<a class="cartao" href="#carrinho-dirigido-pelo-navegador"><img src="assets/carrinho.jpg" alt="Carrinho Wi-Fi" loading="lazy" style="width:100%;height:110px;object-fit:cover;border-radius:10px;margin-bottom:.7rem"><div class="titulo">Carrinho Wi-Fi</div><div class="resumo">Cria a própria rede e é dirigido pelo navegador.</div></a>
+<a class="cartao" href="#casa-com-telhado-que-fecha-na-chuva"><img src="assets/casa-chuva.jpg" alt="Casa na chuva" loading="lazy" style="width:100%;height:110px;object-fit:cover;border-radius:10px;margin-bottom:.7rem"><div class="titulo">Casa na chuva</div><div class="resumo">Sensor de chuva fecha o telhado sozinho.</div></a>
+<a class="cartao" href="#radar-de-varredura"><img src="assets/radar.jpg" alt="Radar" loading="lazy" style="width:100%;height:110px;object-fit:cover;border-radius:10px;margin-bottom:.7rem"><div class="titulo">Radar</div><div class="resumo">Servo varre um sensor de distância e apita.</div></a>
+<a class="cartao" href="#jogo-da-memoria"><img src="assets/jogo-da-memoria.jpg" alt="Jogo da memória" loading="lazy" style="width:100%;height:110px;object-fit:cover;border-radius:10px;margin-bottom:.7rem"><div class="titulo">Jogo da memória</div><div class="resumo">Estilo Genius, com placar e display OLED.</div></a>
+<a class="cartao" href="#cyberdeck"><img src="assets/cyberdeck.jpg" alt="Cyberdeck" loading="lazy" style="width:100%;height:110px;object-fit:cover;border-radius:10px;margin-bottom:.7rem"><div class="titulo">Cyberdeck</div><div class="resumo">Raspberry Pi com display numa caixa de madeira.</div></a>
 </div>
 
 <h3 id="carrinho-dirigido-pelo-navegador">Carrinho dirigido pelo navegador<a class="headerlink" href="#carrinho-dirigido-pelo-navegador" title="Permanent link">&para;</a></h3>
-<p>Um chassi de quatro rodas com ESP32 e ponte H L298N. A placa <strong>cria a propria rede Wi-Fi</strong>,
-serve uma pagina de controle, e cada pessoa entra com o proprio nome para dirigir.</p>
-<p>O detalhe interessante do projeto e eletrico, nao de codigo: a ponte H tem <strong>dois canais
-para quatro motores</strong>, entao os dois motores de um lado sempre recebem a mesma tensao. Se
-uma roda gira ao contrario, nenhum ajuste de software resolve — e fio trocado.</p>
+<p>Um chassi de quatro rodas com ESP32 e ponte H L298N. A placa <strong>cria a própria rede Wi-Fi</strong>,
+serve uma página de controle, e cada pessoa entra com o próprio nome para dirigir.</p>
+<p>O detalhe mais interessante do projeto é elétrico, não de código: a ponte H tem <strong>dois
+canais para quatro motores</strong>, então os dois motores de um lado sempre recebem a mesma
+tensão. Se uma roda gira ao contrário, nenhum ajuste de software resolve — é fio trocado.</p>
 <details class="example">
-<summary>Ver o codigo dos motores</summary>
-<p>Esta e a parte que interessa para quem esta comecando: so <code>pinMode</code>, <code>analogWrite</code> e
-um <code>if</code>. Toda a Wi-Fi fica em outro arquivo.</p>
+<summary>Ver o código dos motores</summary>
+<p>Esta é a parte que interessa para quem está começando: só <code>pinMode</code>, <code>analogWrite</code> e
+um <code>if</code>. Toda a parte de Wi-Fi fica em outro arquivo.</p>
 <div class="highlight"><span class="filename">motores.ino</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">dutyEsquerdaFrente</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">dutyEsquerdaTras</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">dutyDireitaFrente</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
@@ -882,12 +882,12 @@ um <code>if</code>. Toda a Wi-Fi fica em outro arquivo.</p>
 <a class="baixar" download="download" href="../codigo/carrinho-wifi/motores.ino">Baixar motores.ino</a>
 <a class="baixar" download="download" href="../codigo/carrinho-wifi/paginas.ino">Baixar paginas.ino</a></p>
 <h3 id="casa-com-telhado-que-fecha-na-chuva">Casa com telhado que fecha na chuva<a class="headerlink" href="#casa-com-telhado-que-fecha-na-chuva" title="Permanent link">&para;</a></h3>
-<p>Uma maquete de casa em que o telhado se fecha sozinho quando comeca a chover. Um sensor de
+<p>Uma maquete de casa em que o telhado se fecha sozinho quando começa a chover. Um sensor de
 chuva detecta as gotas e um servo motor move um leque que cobre o varal.</p>
 <p>Depois que a chuva passa, ele <strong>espera dez segundos antes de reabrir</strong> — sem essa espera o
-telhado ficaria batendo enquanto a agua evapora e a leitura oscila.</p>
+telhado ficaria batendo enquanto a água evapora e a leitura oscila em cima do limiar.</p>
 <details class="example">
-<summary>Ver o codigo completo</summary>
+<summary>Ver o código completo</summary>
 <div class="highlight"><span class="filename">casa.ino</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PINO_DO_SERVO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">13</span><span class="p">;</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PINO_DO_SENSOR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">34</span><span class="p">;</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
@@ -1061,43 +1061,43 @@ telhado ficaria batendo enquanto a agua evapora e a leitura oscila.</p>
 </details>
 <p><a class="baixar" download="download" href="../codigo/casa-telhado/casa.ino">Baixar casa.ino</a></p>
 <h3 id="radar-de-varredura">Radar de varredura<a class="headerlink" href="#radar-de-varredura" title="Permanent link">&para;</a></h3>
-<p>Um servo gira um sensor ultrassonico de um lado para o outro. Quando aparece um objeto a
-frente, a varredura <strong>para</strong> e o buzzer apita com cadencia proporcional a proximidade —
-mais perto, mais rapido, como sensor de re.</p>
+<p>Um servo gira um sensor ultrassônico de um lado para o outro. Quando aparece um objeto à
+frente, a varredura <strong>para</strong> e o buzzer apita com cadência proporcional à proximidade —
+mais perto, mais rápido, como sensor de ré.</p>
 <div class="admonition note">
-<p class="admonition-title">Codigo em preparacao</p>
-<p>Este projeto foi escrito em MicroPython. A versao em Arduino IDE, para ficar no mesmo
-padrao dos outros, sera publicada aqui.</p>
+<p class="admonition-title">Código em preparação</p>
+<p>Este projeto foi escrito em MicroPython. A versão em Arduino IDE, para ficar no mesmo
+padrão dos outros, será publicada aqui.</p>
 </div>
 <h3 id="cyberdeck">Cyberdeck<a class="headerlink" href="#cyberdeck" title="Permanent link">&para;</a></h3>
-<p>Um Raspberry Pi com display montado dentro de uma caixa de madeira — um computador
-portatil de bancada, para levar o ambiente de desenvolvimento junto com os projetos.</p>
+<p>Um Raspberry Pi com display montado dentro de uma caixa de madeira — um computador portátil
+de bancada, para levar o ambiente de desenvolvimento junto com os projetos.</p>
 <p><img alt="Cyberdeck" class="foto-projeto" src="../assets/cyberdeck.jpg" /></p>
-<h3 id="jogo-da-memoria">Jogo da memoria<a class="headerlink" href="#jogo-da-memoria" title="Permanent link">&para;</a></h3>
-<p>Estilo Genius: o sistema pisca uma sequencia de cores, o jogador repete nos botoes, e a
-sequencia cresce a cada fase. Tem display OLED, som proprio para cada cor e placar salvo na
-memoria, que sobrevive a desligar a placa.</p>
+<h3 id="jogo-da-memoria">Jogo da memória<a class="headerlink" href="#jogo-da-memoria" title="Permanent link">&para;</a></h3>
+<p>Estilo Genius: o sistema pisca uma sequência de cores, o jogador repete nos botões, e a
+sequência cresce a cada fase. Tem display OLED, som próprio para cada cor e placar salvo na
+memória, que sobrevive a desligar a placa.</p>
 <div class="admonition note">
-<p class="admonition-title">Codigo em preparacao</p>
-<p>Este projeto foi escrito em MicroPython, para Raspberry Pi Pico. A versao em Arduino
-IDE sera publicada aqui.</p>
+<p class="admonition-title">Código em preparação</p>
+<p>Este projeto foi escrito em MicroPython, para Raspberry Pi Pico. A versão em Arduino
+IDE será publicada aqui.</p>
 </div>
 <h2 id="projetos-da-disciplina">Projetos da disciplina<a class="headerlink" href="#projetos-da-disciplina" title="Permanent link">&para;</a></h2>
-<p>Trabalhos construidos pelos alunos de <strong>Fundamentos de Sistemas Embarcados</strong> (FGA/UnB), na
-organizacao <a href="https://github.com/FGA-FSE">FGA-FSE</a>. Sao projetos de disciplina, feitos por
-estudantes de graduacao — uma amostra do que da para construir depois de aprender o basico.</p>
+<p>Trabalhos construídos pelos alunos de <strong>Fundamentos de Sistemas Embarcados</strong> (FGA/UnB), na
+organização <a href="https://github.com/FGA-FSE">FGA-FSE</a>. São projetos de disciplina, feitos por
+estudantes de graduação — uma amostra do que dá para construir depois de aprender o básico.</p>
 <div class="cartoes" markdown="0">
 <a class="cartao" href="https://github.com/FGA-FSE/Trabalho-3-Mayara-Raquel" target="_blank"><div class="titulo">Incubadora inteligente</div><div class="resumo">Controle de temperatura e umidade com ESP32.</div></a>
-<a class="cartao" href="https://github.com/FGA-FSE/trabalho-3-fabio-mateus_cavati-ricardo-ryan" target="_blank"><div class="titulo">Controle com sensor de pressao</div><div class="resumo">Botoes sensiveis a pressao num controle de videogame.</div></a>
-<a class="cartao" href="https://github.com/FGA-FSE/trabalho-final-smart-lock" target="_blank"><div class="titulo">Fechadura inteligente</div><div class="resumo">Smart lock com acionamento eletronico.</div></a>
-<a class="cartao" href="https://github.com/FGA-FSE/trabalho-final-robomasters1" target="_blank"><div class="titulo">RoboMasters</div><div class="resumo">Projeto final de robotica da disciplina.</div></a>
-<a class="cartao" href="https://github.com/FGA-FSE/trabalho-1-entrega-3-mayara-alves" target="_blank"><div class="titulo">Simulador de transito</div><div class="resumo">Semaforos e fluxo de veiculos simulados.</div></a>
-<a class="cartao" href="https://github.com/FGA-FSE/trabalho-2-termostato-nest-gustavo-yasmin" target="_blank"><div class="titulo">Termostato</div><div class="resumo">Estudo e reproducao de um termostato comercial.</div></a>
+<a class="cartao" href="https://github.com/FGA-FSE/trabalho-3-fabio-mateus_cavati-ricardo-ryan" target="_blank"><div class="titulo">Controle com sensor de pressão</div><div class="resumo">Botões sensíveis à pressão num controle de videogame.</div></a>
+<a class="cartao" href="https://github.com/FGA-FSE/trabalho-final-smart-lock" target="_blank"><div class="titulo">Fechadura inteligente</div><div class="resumo">Smart lock com acionamento eletrônico.</div></a>
+<a class="cartao" href="https://github.com/FGA-FSE/trabalho-final-robomasters1" target="_blank"><div class="titulo">RoboMasters</div><div class="resumo">Projeto final de robótica da disciplina.</div></a>
+<a class="cartao" href="https://github.com/FGA-FSE/trabalho-1-entrega-3-mayara-alves" target="_blank"><div class="titulo">Simulador de trânsito</div><div class="resumo">Semáforos e fluxo de veículos simulados.</div></a>
+<a class="cartao" href="https://github.com/FGA-FSE/trabalho-2-termostato-nest-gustavo-yasmin" target="_blank"><div class="titulo">Termostato</div><div class="resumo">Estudo e reprodução de um termostato comercial.</div></a>
 <a class="cartao" href="https://github.com/FGA-FSE/Trabalho-2-Mayara-Raquel-Lucas-Joao" target="_blank"><div class="titulo">Estudo da incubadora Brinsea</div><div class="resumo">Engenharia reversa de uma chocadeira comercial.</div></a>
-<a class="cartao" href="https://github.com/FGA-FSE/trabalho-2-ryan-mateus_cavati-ricardo-fabio" target="_blank"><div class="titulo">Pressao em controle de PS4</div><div class="resumo">Viabilidade de sensores de pressao nos botoes.</div></a>
-<a class="cartao" href="https://github.com/FGA-FSE/trabalho-final-prof-daniel-kaua-arthur-davi" target="_blank"><div class="titulo">Trabalho final — Kaua, Arthur e Davi</div><div class="resumo">Projeto integrador da disciplina.</div></a>
+<a class="cartao" href="https://github.com/FGA-FSE/trabalho-2-ryan-mateus_cavati-ricardo-fabio" target="_blank"><div class="titulo">Pressão em controle de PS4</div><div class="resumo">Viabilidade de sensores de pressão nos botões.</div></a>
+<a class="cartao" href="https://github.com/FGA-FSE/trabalho-final-prof-daniel-kaua-arthur-davi" target="_blank"><div class="titulo">Trabalho final — Kauã, Arthur e Davi</div><div class="resumo">Projeto integrador da disciplina.</div></a>
 <a class="cartao" href="https://github.com/FGA-FSE/trabalho-final-prof-daniel-manoela-victor-trabalho-final" target="_blank"><div class="titulo">Trabalho final — Manoela e Victor</div><div class="resumo">Projeto integrador da disciplina.</div></a>
-<a class="cartao" href="https://github.com/FGA-FSE" target="_blank"><div class="titulo">Ver todos</div><div class="resumo">A organizacao completa da disciplina no GitHub.</div></a>
+<a class="cartao" href="https://github.com/FGA-FSE" target="_blank"><div class="titulo">Ver todos</div><div class="resumo">A organização completa da disciplina no GitHub.</div></a>
 </div>
 
 
