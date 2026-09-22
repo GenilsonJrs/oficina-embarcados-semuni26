@@ -1,0 +1,68 @@
+site_name: Oficina de Introdução aos Sistemas Embarcados
+site_description: SEMUNI 2026 — FCTE/UnB Campus Gama
+site_author: Genilson Silva de Araújo Júnior
+site_url: https://genilsonjrs.github.io/oficina-embarcados-semuni26/
+repo_url: https://github.com/GenilsonJrs/oficina-embarcados-semuni26
+repo_name: oficina-embarcados-semuni26
+edit_uri: edit/main/docs/
+copyright: Oficina de Sistemas Embarcados · SEMUNI 2026 · FCTE/UnB Gama
+
+theme:
+  name: material
+  language: pt-BR
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Modo claro
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Modo escuro
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.indexes
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+nav:
+  - Início: index.md
+  - Projetos: projetos.md
+  - Dia 1: dia-1.md
+  - Dia 2: dia-2.md
+  - Dia 3: dia-3.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - def_list
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+plugins:
+  - search:
+      lang: pt
+
+extra_css:
+  - stylesheets/extra.css
