@@ -45,19 +45,22 @@
 .heroi {
   position: relative;
   display: grid;
-  grid-template-columns: 1.25fr .85fr;
+  grid-template-columns: 1.15fr .85fr;
   align-items: center;
-  gap: 1rem;
-  margin: 0 0 2.4rem;
-  padding: 2.4rem 2rem;
-  border-radius: 20px;
-  border: 1px solid rgba(240, 169, 74, .22);
+  gap: .5rem;
+  min-height: 25rem;
+  margin: 0 0 2.2rem;
+  padding: 2.6rem 2.4rem;
+  border-radius: 16px;
+  border: 1px solid rgba(240, 169, 74, .18);
   background:
-    radial-gradient(ellipse 60% 90% at 6% 100%, rgba(232, 133, 44, .42), transparent 62%),
-    radial-gradient(ellipse 50% 60% at 96% 0%, rgba(60, 110, 175, .3), transparent 70%),
-    linear-gradient(140deg, #14273f 0%, #0c1a2b 55%, #1a1410 100%);
+    radial-gradient(ellipse 55% 75% at 2% 108%, rgba(240, 150, 50, .55), transparent 60%),
+    radial-gradient(ellipse 40% 55% at 78% 62%, rgba(255, 170, 80, .22), transparent 68%),
+    radial-gradient(ellipse 70% 70% at 88% 4%, rgba(46, 92, 150, .38), transparent 72%),
+    linear-gradient(150deg, #16253a 0%, #0e1b2c 48%, #211710 100%);
   color: #eef4fc;
   overflow: hidden;
+  box-shadow: inset 0 0 90px rgba(0, 0, 0, .45);
 }
 
 .heroi .trilhas {
@@ -65,7 +68,7 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  opacity: .45;
+  opacity: .55;
   pointer-events: none;
 }
 
@@ -74,55 +77,55 @@
 .heroi .selo {
   display: inline-flex;
   align-items: center;
-  gap: .5rem;
-  margin-bottom: 1.1rem;
-  padding: .45rem 1.05rem;
+  gap: .55rem;
+  margin-bottom: 1.4rem;
+  padding: .6rem 1.4rem;
   border-radius: 999px;
-  border: 1px solid rgba(240, 169, 74, .55);
+  border: 2px solid rgba(240, 169, 74, .75);
   color: var(--ambar-claro);
-  font-size: .6rem;
-  font-weight: 700;
-  letter-spacing: .16em;
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .14em;
   text-transform: uppercase;
 }
 
 .heroi h1 {
-  margin: 0 0 .9rem;
-  font-size: 2.45rem;
-  line-height: 1.08;
+  margin: 0 0 1.1rem;
+  font-size: 3rem;
+  line-height: 1.04;
   font-weight: 800;
   color: #ffffff;
-  letter-spacing: -.025em;
+  letter-spacing: -.03em;
 }
 
 .heroi h1 span { display: block; color: var(--ambar); }
 
 .heroi p {
   margin: 0;
-  max-width: 30rem;
-  color: #c4d3e6;
-  font-size: .78rem;
-  line-height: 1.65;
+  max-width: 31rem;
+  color: #cfdcec;
+  font-size: .8rem;
+  line-height: 1.7;
 }
 
 .heroi .palco { position: relative; z-index: 2; text-align: center; }
 
 .heroi .palco img {
   width: 100%;
-  max-width: 260px;
+  max-width: 330px;
   height: auto;
-  filter: drop-shadow(0 18px 30px rgba(0, 0, 0, .6));
+  filter: drop-shadow(0 26px 34px rgba(0, 0, 0, .65));
 }
 
 .heroi .luz {
   position: absolute;
   left: 50%;
-  top: 4%;
-  width: 300px;
-  height: 300px;
-  margin-left: -150px;
+  top: -6%;
+  width: 360px;
+  height: 360px;
+  margin-left: -180px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 199, 125, .55) 0%, rgba(255, 180, 90, .16) 42%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 205, 135, .6) 0%, rgba(255, 180, 90, .18) 40%, transparent 68%);
   animation: piscar 3s ease-in-out infinite;
   pointer-events: none;
 }
@@ -307,3 +310,93 @@
   .heroi .palco img { max-width: 190px; margin-top: 1.4rem; }
   .lampada-canto { width: 68px; height: 130px; right: 4%; }
 }
+
+.md-tabs__link {
+  font-weight: 600;
+  opacity: .78;
+}
+
+.md-tabs__item--active .md-tabs__link {
+  opacity: 1;
+  color: var(--ambar);
+}
+
+.md-tabs__item .md-tabs__link::before {
+  margin-right: .45rem;
+  font-size: .82em;
+}
+
+.md-tabs__item:nth-child(1) .md-tabs__link::before { content: "\1F3E0"; }
+.md-tabs__item:nth-child(2) .md-tabs__link::before { content: "\1F4C1"; }
+.md-tabs__item:nth-child(3) .md-tabs__link::before { content: "\1F5D3"; }
+.md-tabs__item:nth-child(4) .md-tabs__link::before { content: "\1F5D3"; }
+.md-tabs__item:nth-child(5) .md-tabs__link::before { content: "\1F5D3"; }
+
+.md-tabs__item--active .md-tabs__link {
+  border-bottom: 3px solid var(--ambar);
+  padding-bottom: .2rem;
+}
+
+.md-sidebar--secondary .md-nav--secondary {
+  padding: 1.2rem 1.1rem 1.4rem;
+  border-radius: 14px;
+  border: 1px solid var(--borda);
+  background: var(--painel);
+}
+
+.md-nav--secondary > .md-nav__title {
+  font-size: 0 !important;
+  padding: 0 0 .8rem !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.md-nav--secondary > .md-nav__title::before {
+  content: "\275D  Nesta p\00E1gina";
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--md-default-fg-color);
+  letter-spacing: -.01em;
+}
+
+.md-nav--secondary .md-nav__title .md-nav__icon { display: none; }
+
+.md-nav--secondary .md-nav__link {
+  font-size: .68rem;
+  padding: .26rem 0;
+}
+
+.md-sidebar--secondary .md-nav--secondary::after {
+  content: "\1F916  Pequenos c\00F3digos, grandes descobertas!";
+  display: block;
+  margin-top: 1.1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--borda);
+  color: var(--ambar);
+  font-size: .66rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.capa-github {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  height: 150px;
+  background: linear-gradient(140deg, #16253a 0%, #0d1a2b 100%);
+  color: var(--ambar);
+  border-bottom: 1px solid var(--borda);
+}
+
+.capa-github svg { width: 42px; height: 42px; }
+
+.capa-github span {
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.md-typeset h2 { font-size: 1.45rem; }
