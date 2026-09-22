@@ -29,6 +29,7 @@ theme:
     repo: fontawesome/brands/github
   features:
     - navigation.tabs
+    - navigation.sections
     - navigation.top
     - navigation.indexes
     - navigation.footer
@@ -39,7 +40,10 @@ theme:
 
 nav:
   - Início: index.md
-  - Projetos: projetos.md
+  - Projetos:
+      - projetos/index.md
+      - Feitos para a oficina: projetos/oficina.md
+      - Da disciplina: projetos/disciplina.md
   - Dia 1: dia-1.md
   - Dia 2: dia-2.md
   - Dia 3: dia-3.md

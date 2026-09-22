@@ -1,21 +1,19 @@
-# Projetos
+# Projetos feitos para a oficina
 
-Duas coleções diferentes: os projetos de mostra que montamos para esta oficina, e os
-trabalhos que os alunos da disciplina de Sistemas Embarcados já construíram.
-
-## Projetos de mostra da oficina
-
-Montados pela equipe para a SEMUNI 2026. Clique para ver o código e baixar.
+Montados pela equipe para a SEMUNI 2026. Todos em **Arduino IDE**, no mesmo nível dos
+exercícios das aulas. Clique num cartão para ir direto ao código.
 
 <div class="cartoes" markdown="0">
-<a class="cartao" href="#carrinho-dirigido-pelo-navegador"><img src="assets/carrinho.jpg" alt="Carrinho Wi-Fi" loading="lazy" style="width:100%;height:110px;object-fit:cover;border-radius:10px;margin-bottom:.7rem"><div class="titulo">Carrinho Wi-Fi</div><div class="resumo">Cria a própria rede e é dirigido pelo navegador.</div></a>
-<a class="cartao" href="#casa-com-telhado-que-fecha-na-chuva"><img src="assets/casa-chuva.jpg" alt="Casa na chuva" loading="lazy" style="width:100%;height:110px;object-fit:cover;border-radius:10px;margin-bottom:.7rem"><div class="titulo">Casa na chuva</div><div class="resumo">Sensor de chuva fecha o telhado sozinho.</div></a>
-<a class="cartao" href="#radar-de-varredura"><img src="assets/radar.jpg" alt="Radar" loading="lazy" style="width:100%;height:110px;object-fit:cover;border-radius:10px;margin-bottom:.7rem"><div class="titulo">Radar</div><div class="resumo">Servo varre um sensor de distância e apita.</div></a>
-<a class="cartao" href="#jogo-da-memoria"><img src="assets/jogo-da-memoria.jpg" alt="Jogo da memória" loading="lazy" style="width:100%;height:110px;object-fit:cover;border-radius:10px;margin-bottom:.7rem"><div class="titulo">Jogo da memória</div><div class="resumo">Estilo Genius, com placar e display OLED.</div></a>
-<a class="cartao" href="#cyberdeck"><img src="assets/cyberdeck.jpg" alt="Cyberdeck" loading="lazy" style="width:100%;height:110px;object-fit:cover;border-radius:10px;margin-bottom:.7rem"><div class="titulo">Cyberdeck</div><div class="resumo">Raspberry Pi com display numa caixa de madeira.</div></a>
+<a class="cartao" href="#carrinho-dirigido-pelo-navegador"><img src="../../assets/carrinho.jpg" alt="Carrinho Wi-Fi" loading="lazy"><div class="corpo"><span class="marca">ESP32</span><div class="titulo">Carrinho Wi-Fi</div><div class="resumo">Cria a própria rede e é dirigido pelo navegador.</div></div></a>
+<a class="cartao" href="#casa-com-telhado-que-fecha-na-chuva"><img src="../../assets/casa-chuva.jpg" alt="Casa na chuva" loading="lazy"><div class="corpo"><span class="marca">ESP32</span><div class="titulo">Casa na chuva</div><div class="resumo">Sensor de chuva fecha o telhado sozinho.</div></div></a>
+<a class="cartao" href="#radar-de-varredura"><img src="../../assets/radar.jpg" alt="Radar de varredura" loading="lazy"><div class="corpo"><span class="marca">ESP32</span><div class="titulo">Radar de varredura</div><div class="resumo">Servo varre um sensor de distância e apita.</div></div></a>
+<a class="cartao" href="#jogo-da-memoria"><img src="../../assets/jogo-da-memoria.jpg" alt="Jogo da memória" loading="lazy"><div class="corpo"><span class="marca">ESP32</span><div class="titulo">Jogo da memória</div><div class="resumo">Estilo Genius, com sequência que cresce a cada fase.</div></div></a>
+<a class="cartao" href="#cyberdeck"><img src="../../assets/cyberdeck.jpg" alt="Cyberdeck" loading="lazy"><div class="corpo"><span class="marca">Raspberry Pi</span><div class="titulo">Cyberdeck</div><div class="resumo">Raspberry Pi com display numa caixa de madeira.</div></div></a>
 </div>
 
-### Carrinho dirigido pelo navegador
+## Carrinho dirigido pelo navegador
+
+![Carrinho Wi-Fi](../assets/carrinho.jpg){ .foto-projeto }
 
 Um chassi de quatro rodas com ESP32 e ponte H L298N. A placa **cria a própria rede Wi-Fi**,
 serve uma página de controle, e cada pessoa entra com o próprio nome para dirigir.
@@ -125,11 +123,13 @@ tensão. Se uma roda gira ao contrário, nenhum ajuste de software resolve — �
     }
     ```
 
-[Baixar carrinho.ino](codigo/carrinho-wifi/carrinho.ino){ .baixar download }
-[Baixar motores.ino](codigo/carrinho-wifi/motores.ino){ .baixar download }
-[Baixar paginas.ino](codigo/carrinho-wifi/paginas.ino){ .baixar download }
+[Baixar carrinho.ino](../codigo/carrinho-wifi/carrinho.ino){ .baixar download }
+[Baixar motores.ino](../codigo/carrinho-wifi/motores.ino){ .baixar download }
+[Baixar paginas.ino](../codigo/carrinho-wifi/paginas.ino){ .baixar download }
 
-### Casa com telhado que fecha na chuva
+## Casa com telhado que fecha na chuva
+
+![Casa com telhado automático](../assets/casa-chuva.jpg){ .foto-projeto }
 
 Uma maquete de casa em que o telhado se fecha sozinho quando começa a chover. Um sensor de
 chuva detecta as gotas e um servo motor move um leque que cobre o varal.
@@ -311,51 +311,264 @@ telhado ficaria batendo enquanto a água evapora e a leitura oscila em cima do l
     }
     ```
 
-[Baixar casa.ino](codigo/casa-telhado/casa.ino){ .baixar download }
+[Baixar casa.ino](../codigo/casa-telhado/casa.ino){ .baixar download }
 
-### Radar de varredura
+## Radar de varredura
+
+![Radar de varredura](../assets/radar.jpg){ .foto-projeto }
 
 Um servo gira um sensor ultrassônico de um lado para o outro. Quando aparece um objeto à
 frente, a varredura **para** e o buzzer apita com cadência proporcional à proximidade —
 mais perto, mais rápido, como sensor de ré.
 
-!!! note "Código em preparação"
-    Este projeto foi escrito em MicroPython. A versão em Arduino IDE, para ficar no mesmo
-    padrão dos outros, será publicada aqui.
+Precisa da biblioteca **ESP32Servo**, que se instala pelo Gerenciador de Bibliotecas da
+Arduino IDE.
 
-### Cyberdeck
+??? example "Ver o código completo"
+
+    ```cpp title="radar.ino"
+    #include <ESP32Servo.h>
+
+    #define SERVO 13
+    #define TRIG 5
+    #define ECHO 18
+    #define BUZZER 19
+
+    #define ANGULO_MINIMO 20
+    #define ANGULO_MAXIMO 160
+    #define PASSO 2
+
+    #define DISTANCIA_ALERTA 40
+    #define DISTANCIA_PERTO 5
+    #define PAUSA_PERTO 70
+    #define PAUSA_LONGE 480
+
+    Servo servo;
+    int angulo = ANGULO_MINIMO;
+    int passo = PASSO;
+
+    long medirDistancia() {
+      digitalWrite(TRIG, LOW);
+      delayMicroseconds(2);
+      digitalWrite(TRIG, HIGH);
+      delayMicroseconds(10);
+      digitalWrite(TRIG, LOW);
+
+      long duracao = pulseIn(ECHO, HIGH, 25000);
+      if (duracao == 0) {
+        return 999;
+      }
+      return duracao / 58;
+    }
+
+    void apitar(long distancia) {
+      int pausa = map(distancia, DISTANCIA_PERTO, DISTANCIA_ALERTA, PAUSA_PERTO, PAUSA_LONGE);
+      if (pausa < PAUSA_PERTO) {
+        pausa = PAUSA_PERTO;
+      }
+      tone(BUZZER, 3000, 45);
+      delay(pausa);
+    }
+
+    void setup() {
+      Serial.begin(115200);
+      pinMode(TRIG, OUTPUT);
+      pinMode(ECHO, INPUT);
+      pinMode(BUZZER, OUTPUT);
+      servo.attach(SERVO);
+      servo.write(angulo);
+      delay(500);
+    }
+
+    void loop() {
+      servo.write(angulo);
+      delay(60);
+
+      long distancia = medirDistancia();
+
+      Serial.print(angulo);
+      Serial.print(" graus  ");
+      Serial.print(distancia);
+      Serial.println(" cm");
+
+      if (distancia <= DISTANCIA_ALERTA) {
+        apitar(distancia);
+        return;
+      }
+
+      angulo = angulo + passo;
+      if (angulo >= ANGULO_MAXIMO || angulo <= ANGULO_MINIMO) {
+        passo = -passo;
+      }
+    }
+    ```
+
+[Baixar radar.ino](../codigo/radar/radar.ino){ .baixar download }
+
+## Jogo da memória
+
+![Jogo da memória](../assets/jogo-da-memoria.jpg){ .foto-projeto }
+
+Estilo Genius: o sistema pisca uma sequência de cores, o jogador repete nos botões, e a
+sequência cresce a cada fase até vinte. Cada cor tem o seu próprio tom no buzzer, então dá
+para jogar de ouvido.
+
+A versão abaixo é a da oficina — quatro LEDs, quatro botões e um buzzer, com a pontuação
+saindo pelo Monitor Serial. O protótipo da mostra acrescenta um display OLED e um placar
+gravado na memória da placa.
+
+??? example "Ver o código completo"
+
+    ```cpp title="jogo_da_memoria.ino"
+    #define LED_VERMELHO 2
+    #define LED_AZUL 4
+    #define LED_VERDE 5
+    #define LED_AMARELO 18
+
+    #define BOTAO_VERMELHO 19
+    #define BOTAO_AZUL 21
+    #define BOTAO_VERDE 22
+    #define BOTAO_AMARELO 23
+
+    #define BUZZER 25
+
+    #define TOTAL_FASES 20
+    #define TEMPO_ACESO 500
+    #define TEMPO_PAUSA 200
+    #define TEMPO_LIMITE 5000
+
+    int leds[4] = {LED_VERMELHO, LED_AZUL, LED_VERDE, LED_AMARELO};
+    int botoes[4] = {BOTAO_VERMELHO, BOTAO_AZUL, BOTAO_VERDE, BOTAO_AMARELO};
+    int tons[4] = {1048, 1320, 1568, 2092};
+
+    int sequencia[TOTAL_FASES];
+    int fase = 0;
+
+    void tocarCor(int cor, int duracao) {
+      digitalWrite(leds[cor], HIGH);
+      tone(BUZZER, tons[cor], duracao);
+      delay(duracao);
+      digitalWrite(leds[cor], LOW);
+    }
+
+    void piscarTodos(int vezes) {
+      for (int i = 0; i < vezes; i++) {
+        for (int c = 0; c < 4; c++) {
+          digitalWrite(leds[c], HIGH);
+        }
+        delay(150);
+        for (int c = 0; c < 4; c++) {
+          digitalWrite(leds[c], LOW);
+        }
+        delay(150);
+      }
+    }
+
+    int esperarBotao() {
+      unsigned long inicio = millis();
+      while (millis() - inicio < TEMPO_LIMITE) {
+        for (int c = 0; c < 4; c++) {
+          if (digitalRead(botoes[c]) == LOW) {
+            delay(30);
+            while (digitalRead(botoes[c]) == LOW) {
+            }
+            return c;
+          }
+        }
+      }
+      return -1;
+    }
+
+    void mostrarSequencia() {
+      delay(600);
+      for (int i = 0; i <= fase; i++) {
+        tocarCor(sequencia[i], TEMPO_ACESO);
+        delay(TEMPO_PAUSA);
+      }
+    }
+
+    bool vezDoJogador() {
+      for (int i = 0; i <= fase; i++) {
+        int escolha = esperarBotao();
+        if (escolha < 0) {
+          return false;
+        }
+        tocarCor(escolha, 200);
+        if (escolha != sequencia[i]) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    void fimDeJogo() {
+      Serial.print("Fim de jogo. Voce chegou na fase ");
+      Serial.println(fase);
+      for (int c = 0; c < 4; c++) {
+        digitalWrite(leds[c], HIGH);
+      }
+      tone(BUZZER, 1480, 200);
+      delay(250);
+      tone(BUZZER, 1245, 200);
+      delay(250);
+      tone(BUZZER, 1048, 500);
+      delay(800);
+      for (int c = 0; c < 4; c++) {
+        digitalWrite(leds[c], LOW);
+      }
+      delay(1500);
+      fase = 0;
+    }
+
+    void setup() {
+      Serial.begin(115200);
+      for (int c = 0; c < 4; c++) {
+        pinMode(leds[c], OUTPUT);
+        pinMode(botoes[c], INPUT_PULLUP);
+      }
+      pinMode(BUZZER, OUTPUT);
+      randomSeed(analogRead(34));
+      Serial.println("Jogo da memoria. Repita a sequencia de cores.");
+    }
+
+    void loop() {
+      if (fase == 0) {
+        piscarTodos(2);
+      }
+
+      sequencia[fase] = random(4);
+
+      Serial.print("Fase ");
+      Serial.println(fase + 1);
+
+      mostrarSequencia();
+
+      if (!vezDoJogador()) {
+        fimDeJogo();
+        return;
+      }
+
+      piscarTodos(1);
+      fase = fase + 1;
+
+      if (fase >= TOTAL_FASES) {
+        Serial.println("Voce venceu todas as fases!");
+        piscarTodos(5);
+        fase = 0;
+      }
+
+      delay(600);
+    }
+    ```
+
+[Baixar jogo_da_memoria.ino](../codigo/jogo_da_memoria/jogo_da_memoria.ino){ .baixar download }
+
+## Cyberdeck
+
+![Cyberdeck](../assets/cyberdeck.jpg){ .foto-projeto }
 
 Um Raspberry Pi com display montado dentro de uma caixa de madeira — um computador portátil
 de bancada, para levar o ambiente de desenvolvimento junto com os projetos.
 
-![Cyberdeck](assets/cyberdeck.jpg){ .foto-projeto }
-
-### Jogo da memória
-
-Estilo Genius: o sistema pisca uma sequência de cores, o jogador repete nos botões, e a
-sequência cresce a cada fase. Tem display OLED, som próprio para cada cor e placar salvo na
-memória, que sobrevive a desligar a placa.
-
-!!! note "Código em preparação"
-    Este projeto foi escrito em MicroPython, para Raspberry Pi Pico. A versão em Arduino
-    IDE será publicada aqui.
-
-## Projetos da disciplina
-
-Trabalhos construídos pelos alunos de **Fundamentos de Sistemas Embarcados** (FGA/UnB), na
-organização [FGA-FSE](https://github.com/FGA-FSE). São projetos de disciplina, feitos por
-estudantes de graduação — uma amostra do que dá para construir depois de aprender o básico.
-
-<div class="cartoes" markdown="0">
-<a class="cartao" href="https://github.com/FGA-FSE/Trabalho-3-Mayara-Raquel" target="_blank"><div class="titulo">Incubadora inteligente</div><div class="resumo">Controle de temperatura e umidade com ESP32.</div></a>
-<a class="cartao" href="https://github.com/FGA-FSE/trabalho-3-fabio-mateus_cavati-ricardo-ryan" target="_blank"><div class="titulo">Controle com sensor de pressão</div><div class="resumo">Botões sensíveis à pressão num controle de videogame.</div></a>
-<a class="cartao" href="https://github.com/FGA-FSE/trabalho-final-smart-lock" target="_blank"><div class="titulo">Fechadura inteligente</div><div class="resumo">Smart lock com acionamento eletrônico.</div></a>
-<a class="cartao" href="https://github.com/FGA-FSE/trabalho-final-robomasters1" target="_blank"><div class="titulo">RoboMasters</div><div class="resumo">Projeto final de robótica da disciplina.</div></a>
-<a class="cartao" href="https://github.com/FGA-FSE/trabalho-1-entrega-3-mayara-alves" target="_blank"><div class="titulo">Simulador de trânsito</div><div class="resumo">Semáforos e fluxo de veículos simulados.</div></a>
-<a class="cartao" href="https://github.com/FGA-FSE/trabalho-2-termostato-nest-gustavo-yasmin" target="_blank"><div class="titulo">Termostato</div><div class="resumo">Estudo e reprodução de um termostato comercial.</div></a>
-<a class="cartao" href="https://github.com/FGA-FSE/Trabalho-2-Mayara-Raquel-Lucas-Joao" target="_blank"><div class="titulo">Estudo da incubadora Brinsea</div><div class="resumo">Engenharia reversa de uma chocadeira comercial.</div></a>
-<a class="cartao" href="https://github.com/FGA-FSE/trabalho-2-ryan-mateus_cavati-ricardo-fabio" target="_blank"><div class="titulo">Pressão em controle de PS4</div><div class="resumo">Viabilidade de sensores de pressão nos botões.</div></a>
-<a class="cartao" href="https://github.com/FGA-FSE/trabalho-final-prof-daniel-kaua-arthur-davi" target="_blank"><div class="titulo">Trabalho final — Kauã, Arthur e Davi</div><div class="resumo">Projeto integrador da disciplina.</div></a>
-<a class="cartao" href="https://github.com/FGA-FSE/trabalho-final-prof-daniel-manoela-victor-trabalho-final" target="_blank"><div class="titulo">Trabalho final — Manoela e Victor</div><div class="resumo">Projeto integrador da disciplina.</div></a>
-<a class="cartao" href="https://github.com/FGA-FSE" target="_blank"><div class="titulo">Ver todos</div><div class="resumo">A organização completa da disciplina no GitHub.</div></a>
-</div>
+É o único da mostra que não é microcontrolador: roda Linux inteiro, com terminal e editor,
+e serve para mostrar a diferença entre um **computador embarcado** e um **microcontrolador**.
