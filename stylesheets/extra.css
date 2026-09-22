@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 :root {
   --md-primary-fg-color: #0d1b2c;
   --md-primary-fg-color--dark: #08121d;
@@ -133,9 +135,9 @@
 .lampada-canto {
   position: absolute;
   top: -4px;
-  right: 8%;
-  width: 96px;
-  height: 180px;
+  right: 9%;
+  width: 110px;
+  height: 205px;
   z-index: 3;
   pointer-events: none;
 }
@@ -145,21 +147,23 @@
 .lampada-canto .halo { animation: piscar 3s ease-in-out infinite; }
 
 @keyframes piscar {
-  0%, 44% { opacity: .1; }
-  50%, 88% { opacity: 1; }
-  100% { opacity: .1; }
+  0%, 42% { opacity: .06; }
+  48% { opacity: 1; }
+  56%, 86% { opacity: .82; }
+  100% { opacity: .06; }
 }
 
 @keyframes acender-cone {
-  0%, 44% { opacity: 0; }
-  50%, 88% { opacity: .5; }
+  0%, 42% { opacity: 0; }
+  48% { opacity: .9; }
+  54%, 86% { opacity: .75; }
   100% { opacity: 0; }
 }
 
 @keyframes acender-bulbo {
-  0%, 44% { fill: #3a3426; }
-  50%, 88% { fill: #ffd98a; }
-  100% { fill: #3a3426; }
+  0%, 40% { opacity: 0; }
+  46%, 88% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 .destaques {
@@ -341,7 +345,7 @@
 }
 
 .md-nav--secondary > .md-nav__title::before {
-  content: "Nesta p E1gina";
+  content: "Nesta página";
   font-size: .78rem;
   font-weight: 700;
   color: var(--md-default-fg-color);
@@ -356,7 +360,7 @@
 }
 
 .md-sidebar--secondary .md-nav--secondary::after {
-  content: "Pequenos c F3digos, grandes descobertas.";
+  content: "Pequenos códigos, grandes descobertas.";
   display: block;
   margin-top: 1.1rem;
   padding-top: 1rem;
