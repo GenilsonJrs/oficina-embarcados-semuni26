@@ -315,7 +315,7 @@
 .palco img {
   position: relative;
   z-index: 1;
-  width: 190px;
+  width: 200px;
   height: auto;
   display: block;
   filter: drop-shadow(0 14px 26px rgba(0, 0, 0, .55));
@@ -358,4 +358,50 @@
   .palco img { width: 148px; }
   .palco .luz { width: 200px; height: 200px; margin-left: -100px; }
   .walle-canto { display: none; }
+}
+
+.lampada-canto {
+  position: absolute;
+  top: -2px;
+  right: 26px;
+  width: 104px;
+  height: 190px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.lampada-canto .cone {
+  animation: acender-cone 3s ease-in-out infinite;
+}
+
+.lampada-canto .bulbo {
+  animation: acender-bulbo 3s ease-in-out infinite;
+}
+
+.lampada-canto .halo {
+  animation: piscar 3s ease-in-out infinite;
+}
+
+@keyframes acender-cone {
+  0%, 44% { opacity: 0; }
+  50%, 88% { opacity: .5; }
+  100% { opacity: 0; }
+}
+
+@keyframes acender-bulbo {
+  0%, 44% { fill: #3a3426; }
+  50%, 88% { fill: #ffd98a; }
+  100% { fill: #3a3426; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lampada-canto .cone,
+  .lampada-canto .bulbo,
+  .lampada-canto .halo,
+  .palco .luz,
+  .lampadinha { animation: none; }
+}
+
+@media (max-width: 760px) {
+  .lampada-canto { width: 74px; height: 140px; right: 8px; }
 }
