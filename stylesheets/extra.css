@@ -291,3 +291,71 @@
   .heroi h1 { font-size: 1.6rem; }
   .lampada { width: 118px; height: 118px; }
 }
+
+.palco {
+  position: relative;
+  display: inline-block;
+  margin-bottom: .4rem;
+}
+
+.palco .luz {
+  position: absolute;
+  left: 50%;
+  top: 8%;
+  width: 260px;
+  height: 260px;
+  margin-left: -130px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 199, 125, .85) 0%, rgba(255, 180, 90, .3) 38%, rgba(255, 180, 90, 0) 70%);
+  animation: piscar 3s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.palco img {
+  position: relative;
+  z-index: 1;
+  width: 190px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 14px 26px rgba(0, 0, 0, .55));
+}
+
+.lampadinha {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin-right: .45rem;
+  border-radius: 50%;
+  background: var(--walle-amber);
+  vertical-align: baseline;
+  animation: acender 3s ease-in-out infinite;
+}
+
+@keyframes acender {
+  0%, 44% { background: #4a3a20; box-shadow: none; }
+  50%, 88% { background: #ffd08a; box-shadow: 0 0 10px 3px rgba(255, 190, 110, .85); }
+  100% { background: #4a3a20; box-shadow: none; }
+}
+
+.walle-canto {
+  position: absolute;
+  right: -10px;
+  bottom: -14px;
+  width: 132px;
+  opacity: .9;
+  pointer-events: none;
+}
+
+.foto-projeto {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--walle-borda);
+  margin: 1rem 0;
+}
+
+@media (max-width: 600px) {
+  .palco img { width: 148px; }
+  .palco .luz { width: 200px; height: 200px; margin-left: -100px; }
+  .walle-canto { display: none; }
+}

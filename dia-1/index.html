@@ -486,6 +486,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#programacao-do-dia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programacao do dia
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#o-que-voce-vai-aprender" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -534,6 +545,17 @@
     <span class="md-ellipsis">
       
         Pratica 2 — Controlar um semaforo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-circuito-montado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O circuito montado
       
     </span>
   </a>
@@ -651,6 +673,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#programacao-do-dia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programacao do dia
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#o-que-voce-vai-aprender" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -706,6 +739,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#o-circuito-montado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O circuito montado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pratica-3-acender-um-led-com-botao" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -752,6 +796,33 @@
 luz</strong>. Parece pouco, mas e o momento em que o codigo deixa a tela e vira eletricidade.</p>
 <p>A ideia do dia inteiro cabe numa frase: <strong>um pino so tem dois estados, e voce decide qual.</strong>
 Tudo que vem depois — motor, sensor, display, rede — e elaboracao em cima disso.</p>
+<h2 id="programacao-do-dia">Programacao do dia<a class="headerlink" href="#programacao-do-dia" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Horario</th>
+<th>O que acontece</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>14h00 &ndash; 14h40</td>
+<td>Abertura, apresentacao da equipe e da oficina. O que sao sistemas embarcados e onde eles estao: mostra de projetos e aplicacoes reais</td>
+</tr>
+<tr>
+<td>14h40 &ndash; 15h20</td>
+<td>Microcontroladores e a placa ESP32. Configuracao do ambiente de desenvolvimento e estrutura de um projeto embarcado</td>
+</tr>
+<tr>
+<td>15h20 &ndash; 15h35</td>
+<td>Intervalo</td>
+</tr>
+<tr>
+<td>15h35 &ndash; 17h00</td>
+<td><strong>Pratica:</strong> GPIO. Primeiro programa, leitura de botao e montagem do circuito em protoboard</td>
+</tr>
+</tbody>
+</table>
 <h2 id="o-que-voce-vai-aprender">O que voce vai aprender<a class="headerlink" href="#o-que-voce-vai-aprender" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -799,10 +870,12 @@ justamente para deixar todo mundo com o ambiente funcionando.</p>
 </div>
 <h2 id="slides-da-aula">Slides da aula<a class="headerlink" href="#slides-da-aula" title="Permanent link">&para;</a></h2>
 <div class="moldura-slide" markdown="0">
-<iframe src="https://canva.link/z4i35ryhj6hrqdg" loading="lazy" allowfullscreen></iframe>
+<iframe src="https://www.canva.com/design/DAHUb_scRPU/oeNBIgei-TgZdYx3fND73w/view?embed"
+        loading="lazy" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
 </div>
 
-<p><a class="baixar" href="https://canva.link/z4i35ryhj6hrqdg" target="_blank">Abrir os slides em tela cheia</a></p>
+<p><a class="baixar" href="https://www.canva.com/design/DAHUb_scRPU/oeNBIgei-TgZdYx3fND73w/view" target="_blank">Abrir os slides em tela cheia</a></p>
+<p><small><em>SEMUNI &mdash; Aula 01</em>, por Gabriela de Oliveira Lemos.</small></p>
 <h2 id="pratica-1-piscar-um-led">Pratica 1 — Piscar um LED<a class="headerlink" href="#pratica-1-piscar-um-led" title="Permanent link">&para;</a></h2>
 <p>O "ola, mundo" dos sistemas embarcados. O LED acende por um segundo, apaga por um segundo,
 e repete para sempre.</p>
@@ -862,6 +935,10 @@ que repetido para cada cor, na ordem certa.</p>
 mesmo tempo: o amarelo e sempre bem mais curto. Troque os numeros dentro dos <code>delay()</code>
 e veja.</p>
 </details>
+<h2 id="o-circuito-montado">O circuito montado<a class="headerlink" href="#o-circuito-montado" title="Permanent link">&para;</a></h2>
+<p>Ao final do dia a sua protoboard vai estar parecida com esta: a ESP32 no centro, o modulo
+de semaforo com os tres LEDs, e o botao numa protoboard menor ao lado.</p>
+<p><img alt="Circuito do dia 1 montado na protoboard" class="foto-projeto" src="../assets/aula1-semaforo.jpg" /></p>
 <h2 id="pratica-3-acender-um-led-com-botao">Pratica 3 — Acender um LED com botao<a class="headerlink" href="#pratica-3-acender-um-led-com-botao" title="Permanent link">&para;</a></h2>
 <p>Ate aqui o pino so mandou sinal para fora. Agora ele <strong>le</strong> o mundo: o programa pergunta se
 o botao esta apertado e decide o que fazer.</p>
