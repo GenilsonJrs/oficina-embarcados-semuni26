@@ -12,6 +12,7 @@ Montados pela equipe para a SEMUNI 2026. Clique para ver o codigo e baixar.
 <a class="cartao" href="#casa-com-telhado-que-fecha-na-chuva"><img src="assets/casa-chuva.jpg" alt="Casa" style="width:100%;height:110px;object-fit:cover;border-radius:10px;margin-bottom:.7rem"><div class="titulo">Casa na chuva</div><div class="resumo">Sensor de chuva fecha o telhado sozinho.</div></a>
 <a class="cartao" href="#radar-de-varredura"><img src="assets/radar.jpg" alt="Radar" style="width:100%;height:110px;object-fit:cover;border-radius:10px;margin-bottom:.7rem"><div class="titulo">Radar</div><div class="resumo">Servo varre um sensor de distancia e apita.</div></a>
 <a class="cartao" href="#jogo-da-memoria"><img src="assets/jogo-da-memoria.jpg" alt="Jogo da memoria" style="width:100%;height:110px;object-fit:cover;border-radius:10px;margin-bottom:.7rem"><div class="titulo">Jogo da memoria</div><div class="resumo">Estilo Genius, com placar e display OLED.</div></a>
+<a class="cartao" href="#cyberdeck"><img src="assets/cyberdeck.jpg" alt="Cyberdeck" style="width:100%;height:110px;object-fit:cover;border-radius:10px;margin-bottom:.7rem"><div class="titulo">Cyberdeck</div><div class="resumo">Raspberry Pi com display numa caixa de madeira.</div></a>
 </div>
 
 ### Carrinho dirigido pelo navegador
@@ -324,6 +325,13 @@ mais perto, mais rapido, como sensor de re.
     Este projeto foi escrito em MicroPython. A versao em Arduino IDE, para ficar no mesmo
     padrao dos outros, sera publicada aqui.
 
+### Cyberdeck
+
+Um Raspberry Pi com display montado dentro de uma caixa de madeira — um computador
+portatil de bancada, para levar o ambiente de desenvolvimento junto com os projetos.
+
+![Cyberdeck](assets/cyberdeck.jpg){ .foto-projeto }
+
 ### Jogo da memoria
 
 Estilo Genius: o sistema pisca uma sequencia de cores, o jogador repete nos botoes, e a
@@ -337,11 +345,19 @@ memoria, que sobrevive a desligar a placa.
 ## Projetos da disciplina
 
 Trabalhos construidos pelos alunos de **Fundamentos de Sistemas Embarcados** (FGA/UnB), na
-organizacao [FGA-FSE](https://github.com/FGA-FSE).
+organizacao [FGA-FSE](https://github.com/FGA-FSE). Sao projetos de disciplina, feitos por
+estudantes de graduacao — uma amostra do que da para construir depois de aprender o basico.
 
 <div class="cartoes" markdown="0">
 <a class="cartao" href="https://github.com/FGA-FSE/Trabalho-3-Mayara-Raquel" target="_blank"><div class="titulo">Incubadora inteligente</div><div class="resumo">Controle de temperatura e umidade com ESP32.</div></a>
-<a class="cartao" href="https://github.com/FGA-FSE/trabalho-3-fabio-mateus_cavati-ricardo-ryan" target="_blank"><div class="titulo">Controle por pressao</div><div class="resumo">Leitura de sensor de pressao e acionamento.</div></a>
+<a class="cartao" href="https://github.com/FGA-FSE/trabalho-3-fabio-mateus_cavati-ricardo-ryan" target="_blank"><div class="titulo">Controle com sensor de pressao</div><div class="resumo">Botoes sensiveis a pressao num controle de videogame.</div></a>
+<a class="cartao" href="https://github.com/FGA-FSE/trabalho-final-smart-lock" target="_blank"><div class="titulo">Fechadura inteligente</div><div class="resumo">Smart lock com acionamento eletronico.</div></a>
+<a class="cartao" href="https://github.com/FGA-FSE/trabalho-final-robomasters1" target="_blank"><div class="titulo">RoboMasters</div><div class="resumo">Projeto final de robotica da disciplina.</div></a>
+<a class="cartao" href="https://github.com/FGA-FSE/trabalho-1-entrega-3-mayara-alves" target="_blank"><div class="titulo">Simulador de transito</div><div class="resumo">Semaforos e fluxo de veiculos simulados.</div></a>
 <a class="cartao" href="https://github.com/FGA-FSE/trabalho-2-termostato-nest-gustavo-yasmin" target="_blank"><div class="titulo">Termostato</div><div class="resumo">Estudo e reproducao de um termostato comercial.</div></a>
+<a class="cartao" href="https://github.com/FGA-FSE/Trabalho-2-Mayara-Raquel-Lucas-Joao" target="_blank"><div class="titulo">Estudo da incubadora Brinsea</div><div class="resumo">Engenharia reversa de uma chocadeira comercial.</div></a>
+<a class="cartao" href="https://github.com/FGA-FSE/trabalho-2-ryan-mateus_cavati-ricardo-fabio" target="_blank"><div class="titulo">Pressao em controle de PS4</div><div class="resumo">Viabilidade de sensores de pressao nos botoes.</div></a>
+<a class="cartao" href="https://github.com/FGA-FSE/trabalho-final-prof-daniel-kaua-arthur-davi" target="_blank"><div class="titulo">Trabalho final — Kaua, Arthur e Davi</div><div class="resumo">Projeto integrador da disciplina.</div></a>
+<a class="cartao" href="https://github.com/FGA-FSE/trabalho-final-prof-daniel-manoela-victor-trabalho-final" target="_blank"><div class="titulo">Trabalho final — Manoela e Victor</div><div class="resumo">Projeto integrador da disciplina.</div></a>
 <a class="cartao" href="https://github.com/FGA-FSE" target="_blank"><div class="titulo">Ver todos</div><div class="resumo">A organizacao completa da disciplina no GitHub.</div></a>
 </div>

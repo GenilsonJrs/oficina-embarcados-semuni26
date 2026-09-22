@@ -6,6 +6,15 @@ luz**. Parece pouco, mas e o momento em que o codigo deixa a tela e vira eletric
 A ideia do dia inteiro cabe numa frase: **um pino so tem dois estados, e voce decide qual.**
 Tudo que vem depois — motor, sensor, display, rede — e elaboracao em cima disso.
 
+## Programacao do dia
+
+| Horario | O que acontece |
+|---|---|
+| 14h00 &ndash; 14h40 | Abertura, apresentacao da equipe e da oficina. O que sao sistemas embarcados e onde eles estao: mostra de projetos e aplicacoes reais |
+| 14h40 &ndash; 15h20 | Microcontroladores e a placa ESP32. Configuracao do ambiente de desenvolvimento e estrutura de um projeto embarcado |
+| 15h20 &ndash; 15h35 | Intervalo |
+| 15h35 &ndash; 17h00 | **Pratica:** GPIO. Primeiro programa, leitura de botao e montagem do circuito em protoboard |
+
 ## O que voce vai aprender
 
 | Conceito | Onde aparece |
@@ -33,10 +42,13 @@ Voce vai precisar da **Arduino IDE** com suporte a ESP32 instalado. Se ainda nao
 ## Slides da aula
 
 <div class="moldura-slide" markdown="0">
-<iframe src="https://canva.link/z4i35ryhj6hrqdg" loading="lazy" allowfullscreen></iframe>
+<iframe src="https://www.canva.com/design/DAHUb_scRPU/oeNBIgei-TgZdYx3fND73w/view?embed"
+        loading="lazy" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
 </div>
 
-[Abrir os slides em tela cheia](https://canva.link/z4i35ryhj6hrqdg){ .baixar target="_blank" }
+[Abrir os slides em tela cheia](https://www.canva.com/design/DAHUb_scRPU/oeNBIgei-TgZdYx3fND73w/view){ .baixar target="_blank" }
+
+<small>*SEMUNI &mdash; Aula 01*, por Gabriela de Oliveira Lemos.</small>
 
 ## Pratica 1 — Piscar um LED
 
@@ -105,6 +117,13 @@ void loop() {
     Da, e e um bom exercicio. Um semaforo de verdade nao deixa as tres cores acesas pelo
     mesmo tempo: o amarelo e sempre bem mais curto. Troque os numeros dentro dos `delay()`
     e veja.
+
+## O circuito montado
+
+Ao final do dia a sua protoboard vai estar parecida com esta: a ESP32 no centro, o modulo
+de semaforo com os tres LEDs, e o botao numa protoboard menor ao lado.
+
+![Circuito do dia 1 montado na protoboard](assets/aula1-semaforo.jpg){ .foto-projeto }
 
 ## Pratica 3 — Acender um LED com botao
 
