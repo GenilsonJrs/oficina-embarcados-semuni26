@@ -7,8 +7,8 @@
 #define OLED_RESET -1 
 #define ENDERECO 0x3C 
 
-#define PINO_SDA 19  // dados
-#define PINO_SCL 18  // clock
+#define PINO_SDA 21  // dados
+#define PINO_SCL 22  // clock
 
 Adafruit_SSD1306 display(LARGURA, ALTURA, &Wire, OLED_RESET);
 

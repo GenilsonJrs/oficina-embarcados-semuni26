@@ -1203,11 +1203,11 @@ barramento tem um endereço; o nosso display é o <code>0x3C</code>.</p>
 <tbody>
 <tr>
 <td>SDA (dados)</td>
-<td><strong>GPIO 19</strong></td>
+<td><strong>GPIO 21</strong></td>
 </tr>
 <tr>
 <td>SCL (relógio)</td>
-<td><strong>GPIO 18</strong></td>
+<td><strong>GPIO 22</strong></td>
 </tr>
 <tr>
 <td>VCC</td>
@@ -1219,6 +1219,13 @@ barramento tem um endereço; o nosso display é o <code>0x3C</code>.</p>
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Por que 21 e 22?</p>
+<p>São os pinos de I²C <strong>padrão da ESP32</strong>. Quase todo tutorial e todo módulo assume
+esses dois, então usar o padrão evita confusão na hora de procurar ajuda. Nada impede
+usar outros pinos — o <code>Wire.begin(PINO_SDA, PINO_SCL)</code> aceita qualquer par —, mas aí é
+preciso lembrar de trocar também no código.</p>
+</div>
 <p>Os dois exercícios a seguir precisam das bibliotecas <strong>Adafruit SSD1306</strong> e
 <strong>Adafruit GFX</strong>, instaladas pelo Gerenciador de Bibliotecas da Arduino IDE.</p>
 <h2 id="hello-world-no-display"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 15v-1.5a1.5 1.5 0 0 0-1.5-1.5 1.5 1.5 0 0 0 1.5-1.5V9a2 2 0 0 0-2-2H9v2h4v2h-2v2h2v2H9v2h4a2 2 0 0 0 2-2M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2"/></svg></span> Hello, world! no display<a class="headerlink" href="#hello-world-no-display" title="Permanent link">&para;</a></h2>
@@ -1233,8 +1240,8 @@ nele, e <code>display()</code> é o que <strong>envia tudo de uma vez</strong> p
 <a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="cp">#define OLED_RESET -1  </span><span class="c1">// nosso display nao tem pino de reset</span>
 <a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="cp">#define ENDERECO 0x3C  </span><span class="c1">// endereço I2C do nosso display</span>
 <a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="cp">#define PINO_SDA 19  </span><span class="c1">// dados</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="cp">#define PINO_SCL 18  </span><span class="c1">// clock</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="cp">#define PINO_SDA 21  </span><span class="c1">// dados</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="cp">#define PINO_SCL 22  </span><span class="c1">// clock</span>
 <a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
 <a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="n">Adafruit_SSD1306</span><span class="w"> </span><span class="nf">display</span><span class="p">(</span><span class="n">LARGURA</span><span class="p">,</span><span class="w"> </span><span class="n">ALTURA</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Wire</span><span class="p">,</span><span class="w"> </span><span class="n">OLED_RESET</span><span class="p">);</span>
 <a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
@@ -1276,8 +1283,8 @@ que o computador e a placa <strong>conversam nos dois sentidos</strong>.</p>
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="cp">#define OLED_RESET -1 </span>
 <a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="cp">#define ENDERECO 0x3C </span>
 <a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="cp">#define PINO_SDA 19  </span><span class="c1">// dados</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="cp">#define PINO_SCL 18  </span><span class="c1">// clock</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="cp">#define PINO_SDA 21  </span><span class="c1">// dados</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="cp">#define PINO_SCL 22  </span><span class="c1">// clock</span>
 <a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
 <a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="n">Adafruit_SSD1306</span><span class="w"> </span><span class="nf">display</span><span class="p">(</span><span class="n">LARGURA</span><span class="p">,</span><span class="w"> </span><span class="n">ALTURA</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">Wire</span><span class="p">,</span><span class="w"> </span><span class="n">OLED_RESET</span><span class="p">);</span>
 <a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
