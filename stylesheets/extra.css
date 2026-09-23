@@ -526,3 +526,55 @@
 @media (max-width: 760px) {
   .dupla { grid-template-columns: 1fr; }
 }
+
+.video-demo {
+  display: grid;
+  grid-template-columns: minmax(0, 300px) 1fr;
+  gap: 1.4rem;
+  align-items: center;
+  margin: 1.4rem 0 2rem;
+  padding: 1.3rem;
+  border-radius: 16px;
+  border: 1px solid var(--borda);
+  background:
+    radial-gradient(ellipse 70% 80% at 0% 100%, rgba(232, 133, 44, .14), transparent 62%),
+    var(--painel);
+}
+
+.video-demo video {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--borda);
+  background: #05090f;
+  display: block;
+}
+
+.video-demo .legenda-video .rotulo {
+  display: inline-block;
+  margin-bottom: .6rem;
+  padding: .25rem .7rem;
+  border-radius: 6px;
+  background: rgba(240, 169, 74, .16);
+  color: var(--ambar);
+  font-size: .55rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.video-demo .legenda-video h3 {
+  margin: 0 0 .5rem;
+  font-size: .95rem;
+  font-weight: 700;
+}
+
+.video-demo .legenda-video p {
+  margin: 0 0 .6rem;
+  font-size: .72rem;
+  line-height: 1.6;
+  color: var(--texto-fraco);
+}
+
+@media (max-width: 760px) {
+  .video-demo { grid-template-columns: 1fr; }
+}
