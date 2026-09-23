@@ -288,10 +288,16 @@ barramento tem um endereço; o nosso display é o `0x3C`.
 
 | Pino do display | Vai para |
 |---|---|
-| SDA (dados) | **GPIO 19** |
-| SCL (relógio) | **GPIO 18** |
+| SDA (dados) | **GPIO 21** |
+| SCL (relógio) | **GPIO 22** |
 | VCC | 3V3 |
 | GND | GND |
+
+!!! tip "Por que 21 e 22?"
+    São os pinos de I²C **padrão da ESP32**. Quase todo tutorial e todo módulo assume
+    esses dois, então usar o padrão evita confusão na hora de procurar ajuda. Nada impede
+    usar outros pinos — o `Wire.begin(PINO_SDA, PINO_SCL)` aceita qualquer par —, mas aí é
+    preciso lembrar de trocar também no código.
 
 Os dois exercícios a seguir precisam das bibliotecas **Adafruit SSD1306** e
 **Adafruit GFX**, instaladas pelo Gerenciador de Bibliotecas da Arduino IDE.
@@ -311,8 +317,8 @@ nele, e `display()` é o que **envia tudo de uma vez** para a tela.
 #define OLED_RESET -1  // nosso display nao tem pino de reset
 #define ENDERECO 0x3C  // endereço I2C do nosso display
 
-#define PINO_SDA 19  // dados
-#define PINO_SCL 18  // clock
+#define PINO_SDA 21  // dados
+#define PINO_SCL 22  // clock
 
 Adafruit_SSD1306 display(LARGURA, ALTURA, &Wire, OLED_RESET);
 
@@ -358,8 +364,8 @@ que o computador e a placa **conversam nos dois sentidos**.
 #define OLED_RESET -1 
 #define ENDERECO 0x3C 
 
-#define PINO_SDA 19  // dados
-#define PINO_SCL 18  // clock
+#define PINO_SDA 21  // dados
+#define PINO_SCL 22  // clock
 
 Adafruit_SSD1306 display(LARGURA, ALTURA, &Wire, OLED_RESET);
 
