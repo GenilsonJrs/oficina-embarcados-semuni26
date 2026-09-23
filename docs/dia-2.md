@@ -131,7 +131,7 @@ void loop() {
 }
 ```
 
-[Baixar ex4_semaforo_botao.ino](../codigo/ex4_semaforo_botao/ex4_semaforo_botao.ino){ .baixar download }
+[Baixar ex4_semaforo_botao.ino](codigo/ex4_semaforo_botao/ex4_semaforo_botao.ino){ .baixar download }
 
 ??? question "Por que o `loop()` está vazio?"
     Porque quem faz o trabalho agora são as tarefas, criadas no `setup()`. Elas rodam por
@@ -273,7 +273,7 @@ void loop() {
 }
 ```
 
-[Baixar ex5_semaforo_buzzer.ino](../codigo/ex5_semaforo_buzzer/ex5_semaforo_buzzer.ino){ .baixar download }
+[Baixar ex5_semaforo_buzzer.ino](codigo/ex5_semaforo_buzzer/ex5_semaforo_buzzer.ino){ .baixar download }
 
 ??? question "Por que `volatile`?"
     Sem isso, o compilador pode "otimizar" a leitura da variável, guardando o valor antigo
@@ -342,7 +342,7 @@ void loop() {
 }
 ```
 
-[Baixar ex6_oled_helloworld.ino](../codigo/ex6_oled_helloworld/ex6_oled_helloworld.ino){ .baixar download }
+[Baixar ex6_oled_helloworld.ino](codigo/ex6_oled_helloworld/ex6_oled_helloworld.ino){ .baixar download }
 
 ??? question "Por que precisa chamar `display()` no fim?"
     Porque tudo que você desenha vai para um rascunho na memória da ESP32, não direto para
@@ -407,12 +407,166 @@ void loop() {
 }
 ```
 
-[Baixar ex7_oled_mensagem.ino](../codigo/ex7_oled_mensagem/ex7_oled_mensagem.ino){ .baixar download }
+[Baixar ex7_oled_mensagem.ino](codigo/ex7_oled_mensagem/ex7_oled_mensagem.ino){ .baixar download }
 
 ??? question "Para que serve o `trim()`?"
     Quando você aperta Enter no Monitor Serial, junto do texto vem um caractere invisível
     de fim de linha. O `trim()` remove esses restos das pontas — sem ele, o display recebe
     um espaço fantasma no fim da mensagem.
+
+## :material-star-circle: Extra — Semáforo de pedestre com display
+
+Juntando tudo do dia: LEDs, botão, buzzer e display num só projeto. O sinal fica verde para
+os carros e a tela avisa **PARE PEDESTRE**. Quando alguém aperta o botão, começa o ciclo:
+
+<ul class="lista-icones">
+<li><strong>Amarelo</strong>: a tela conta <strong>3, 2, 1</strong>, com um bipe a cada número</li>
+<li><strong>Vermelho</strong>: a tela mostra <strong>PODE ATRAVESSAR</strong> e o buzzer bipa a cada segundo</li>
+<li><strong>Fim da travessia</strong>: nova contagem <strong>3, 2, 1</strong>, ainda no vermelho</li>
+<li><strong>Verde</strong> de novo para os carros, e a tela volta para <strong>PARE PEDESTRE</strong></li>
+</ul>
+
+A ligação é a mesma dos exercícios anteriores:
+
+| Componente | Pino da ESP32 |
+|---|---|
+| LED vermelho · amarelo · verde | **GPIO 15** · **GPIO 2** · **GPIO 4** |
+| Botão | **GPIO 16** (RX2 na placa), o outro lado no GND |
+| Buzzer | **GPIO 17** (TX2 na placa) |
+| Display SDA · SCL | **GPIO 21** · **GPIO 22** |
+| VCC do display e do buzzer | 3V3 |
+
+```cpp title="ex8_semaforo_pedestre.ino"
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+
+const int PINO_VERMELHO = 15;
+const int PINO_AMARELO = 2;
+const int PINO_VERDE = 4;
+const int PINO_BOTAO = 16;
+const int PINO_BUZZER = 17;
+const int PINO_SDA = 21;
+const int PINO_SCL = 22;
+
+const int BUZZER_LIGADO = HIGH;
+const int BUZZER_DESLIGADO = LOW;
+
+const int CONTAGEM = 3;
+const int TEMPO_TRAVESSIA = 5;
+
+Adafruit_SSD1306 tela(128, 64, &Wire, -1);
+
+void acender(int vermelho, int amarelo, int verde) {
+  digitalWrite(PINO_VERMELHO, vermelho);
+  digitalWrite(PINO_AMARELO, amarelo);
+  digitalWrite(PINO_VERDE, verde);
+}
+
+void bipar(int duracao, int pausa) {
+  digitalWrite(PINO_BUZZER, BUZZER_LIGADO);
+  delay(duracao);
+  digitalWrite(PINO_BUZZER, BUZZER_DESLIGADO);
+  delay(pausa);
+}
+
+void escreverCentralizado(String texto, int tamanho, int y) {
+  int largura = texto.length() * 6 * tamanho;
+  tela.setTextSize(tamanho);
+  tela.setCursor((128 - largura) / 2, y);
+  tela.print(texto);
+}
+
+void mostrar(String linha1, String linha2) {
+  tela.clearDisplay();
+  escreverCentralizado(linha1, 3, 8);
+  escreverCentralizado(linha2, 2, 44);
+  tela.display();
+}
+
+void mostrarNumero(int numero) {
+  tela.clearDisplay();
+  escreverCentralizado(String(numero), 6, 8);
+  tela.display();
+}
+
+void contagemRegressiva() {
+  for (int numero = CONTAGEM; numero > 0; numero--) {
+    mostrarNumero(numero);
+    bipar(100, 900);
+  }
+}
+
+bool botaoApertado() {
+  if (digitalRead(PINO_BOTAO) == LOW) {
+    delay(50);
+    return digitalRead(PINO_BOTAO) == LOW;
+  }
+  return false;
+}
+
+void esperarSoltarBotao() {
+  while (digitalRead(PINO_BOTAO) == LOW) {
+    delay(10);
+  }
+}
+
+void setup() {
+  Serial.begin(115200);
+
+  pinMode(PINO_VERMELHO, OUTPUT);
+  pinMode(PINO_AMARELO, OUTPUT);
+  pinMode(PINO_VERDE, OUTPUT);
+  pinMode(PINO_BUZZER, OUTPUT);
+  pinMode(PINO_BOTAO, INPUT_PULLUP);
+  digitalWrite(PINO_BUZZER, BUZZER_DESLIGADO);
+
+  Wire.begin(PINO_SDA, PINO_SCL);
+  if (!tela.begin(SSD1306_SWITCHCAPVCC, 0x3C, true, false)) {
+    Serial.println("OLED nao encontrado!");
+    while (true) {
+      delay(1000);
+    }
+  }
+  tela.setTextColor(SSD1306_WHITE);
+  tela.setTextWrap(false);
+
+  acender(LOW, LOW, HIGH);
+  mostrar("PARE", "PEDESTRE");
+}
+
+void loop() {
+  if (botaoApertado()) {
+    acender(LOW, HIGH, LOW);
+    contagemRegressiva();
+
+    acender(HIGH, LOW, LOW);
+    mostrar("PODE", "ATRAVESSAR");
+    for (int i = 0; i < TEMPO_TRAVESSIA; i++) {
+      bipar(200, 800);
+    }
+
+    contagemRegressiva();
+
+    acender(LOW, LOW, HIGH);
+    mostrar("PARE", "PEDESTRE");
+    esperarSoltarBotao();
+  }
+}
+```
+
+[Baixar ex8_semaforo_pedestre.ino](codigo/ex8_semaforo_pedestre/ex8_semaforo_pedestre.ino){ .baixar download }
+
+??? question "Como mudar os tempos e as frases?"
+    Tudo que costuma mudar fica no topo do código. `CONTAGEM` define de quanto começa a
+    contagem e `TEMPO_TRAVESSIA` quantos segundos o pedestre tem para atravessar. As frases
+    estão nas chamadas `mostrar("...", "...")`: na linha de cima cabem até 7 letras, na de
+    baixo até 10.
+
+??? question "O buzzer apita ao contrário, ou não para?"
+    Alguns módulos de buzzer ligam com `LOW` em vez de `HIGH`. Nesse caso, basta inverter
+    as constantes `BUZZER_LIGADO` e `BUZZER_DESLIGADO`. Se ele não parar de jeito nenhum,
+    confira se o VCC dele está no **3V3**, e não no VIN.
 
 ## :material-help-circle: Se algo não funcionar
 

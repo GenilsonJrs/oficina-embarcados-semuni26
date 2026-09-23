@@ -70,7 +70,7 @@ void loop() {
 }
 ```
 
-[Baixar ex1_piscaled.ino](../codigo/ex1_piscaled/ex1_piscaled.ino){ .baixar download }
+[Baixar ex1_piscaled.ino](codigo/ex1_piscaled/ex1_piscaled.ino){ .baixar download }
 
 ??? question "Por que o LED fica aceso exatamente 1 segundo?"
     Porque `delay(1000)` **para tudo** por 1000 milissegundos. Enquanto ele espera, a placa
@@ -109,7 +109,7 @@ void loop() {
 }
 ```
 
-[Baixar ex2_semaforo.ino](../codigo/ex2_semaforo/ex2_semaforo.ino){ .baixar download }
+[Baixar ex2_semaforo.ino](codigo/ex2_semaforo/ex2_semaforo.ino){ .baixar download }
 
 ??? question "Dá para mudar o tempo de cada cor?"
     Dá, e é um bom exercício. Um semáforo de verdade não deixa as três cores acesas pelo
@@ -139,7 +139,7 @@ void loop() {
 }
 ```
 
-[Baixar ex3_botao.ino](../codigo/ex3_botao/ex3_botao.ino){ .baixar download }
+[Baixar ex3_botao.ino](codigo/ex3_botao/ex3_botao.ino){ .baixar download }
 
 ??? question "Por que apertado é LOW, e não HIGH?"
     Por causa do `INPUT_PULLUP`. A placa liga um resistor interno que mantém o pino em
