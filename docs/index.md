@@ -90,7 +90,7 @@ mão em um sistema embarcado.
 <div class="resumo">Concorrência e FreeRTOS: várias tarefas em paralelo. Comunicação por I²C e o primeiro texto no display OLED.</div></div></a>
 <a class="cartao" href="dia-3/"><div class="corpo"><span class="marca">24 de setembro</span>
 <div class="titulo">Dia 3 &middot; Colocando em movimento</div>
-<div class="resumo">Conteúdo liberado no dia.</div></div></a>
+<div class="resumo">PWM para controlar brilho e cor com um encoder, ponte H para mover motores e o desafio final: um carrinho 4WD pilotado pelo celular.</div></div></a>
 </div>
 
 ## :material-school: O que você leva daqui
