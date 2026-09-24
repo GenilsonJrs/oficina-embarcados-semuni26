@@ -541,6 +541,8 @@
     var(--painel);
 }
 
+.video-demo.horizontal { grid-template-columns: minmax(0, 460px) 1fr; }
+
 .video-demo video {
   width: 100%;
   border-radius: 12px;
@@ -576,5 +578,5 @@
 }
 
 @media (max-width: 760px) {
-  .video-demo { grid-template-columns: 1fr; }
+  .video-demo, .video-demo.horizontal { grid-template-columns: 1fr; }
 }
